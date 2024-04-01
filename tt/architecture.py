@@ -11,8 +11,13 @@ from jax.numpy import ndarray
 from tt.attention import MHAttention
 from tt.util import InstanceSingleton, declare_dtype
 
+# fmt: off
 if TYPE_CHECKING:
     from numpy import Fin
+else:
+    class Fin[A]: ...
+# fmt: on
+
 
 type KeyArray = ndarray[Literal[2], int]
 
