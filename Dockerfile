@@ -22,7 +22,7 @@ RUN apt-get install -y --no-install-recommends git htop ncdu
 # RUN apt-get install -y --no-install-recommends build-essential cmake python3.12-dev swig
 
 COPY ./pyproject.toml ./poetry.lock /tmp/
-COPY ./ml_scratch/  /tmp/ml_scratch/
+COPY ./tt/  /tmp/tt/
 RUN cd /tmp && \
     poetry export --output requirements.txt --extras "dev gradient gpu" && \
     python3.11 -m pip install --no-cache-dir --requirement requirements.txt && \ 
